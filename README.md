@@ -31,18 +31,29 @@ Intent is split into multiple repositories:
 
 ## Current Status
 
-**Phase 1 MVP in progress:**
-- REST API for servers, channels, messages, roles
-- WebSocket gateway for real-time events
-- Authentication with session management
-- Permission system with bitfield checks
-- Redis Streams event distribution
-- Voice WebRTC SFU (75% complete)
-- MLS E2EE for DMs
-- Desktop client (Tauri)
-- Web client
+**Phase 1 MVP — nearing completion.**
 
-**Not ready yet** for daily use. Active development.
+### Working
+
+- **Web client** — React 19 + TypeScript SPA with real-time messaging, server/channel management, and auth ([intent-clients](https://github.com/IntentAi/intent-clients))
+- **Protocol spec** — REST API, gateway opcodes, events, voice signaling, codec requirements, MLS E2EE spec, and Discord compatibility mapping fully documented ([intent-protocol](https://github.com/IntentAi/intent-protocol))
+- **Python bot SDK** — Gateway client, REST client with rate limiting, data models, 56+ passing tests ([intent.py](https://github.com/IntentAi/intent.py))
+- **JS/TS bot SDK** — REST client with per-route rate limiting, typed error handling, dual ESM/CJS build ([intent.js](https://github.com/IntentAi/intent.js))
+
+### In Progress
+
+- **Voice** — WebRTC SFU signaling is spec'd, server-side infrastructure partially built, client-side not started
+- **Bot frameworks** — Gateway and Client classes not yet wired in either SDK
+- **Desktop client** — Tauri wrapper planned, not started
+
+### Planned
+
+- MLS end-to-end encryption for DMs
+- Docker image distribution and self-hosting guide
+- Discord migration tools (server exporter, importer, bridge bot)
+- Mobile clients (iOS, Android)
+
+**Not ready for daily use yet.** Active development.
 
 ## Self-Hosting
 
@@ -55,10 +66,11 @@ See [docs/self-hosting.md](docs/self-hosting.md) for details.
 We need you.
 
 **Find your fit:**
-- **Frontend**: Desktop (Tauri) and web clients
+- **Frontend**: Web client improvements, Tauri desktop wrapper
+- **Voice**: WebRTC client integration, SFU testing
+- **Bot SDKs**: Gateway clients, structure classes, command frameworks (intent.js / intent.py)
+- **Migration tools**: Discord server exporter, importer, bridge bot
 - **Mobile**: Swift (iOS), Kotlin (Android) - Phase 2
-- **Bot SDKs**: intent.js and intent.py
-- **Migration tools**: Discord import/bridge tools
 - **Docs**: Guides, tutorials, API documentation
 - **Testing**: Break things, report bugs
 
