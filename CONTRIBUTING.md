@@ -24,13 +24,14 @@ Intent is split into multiple repositories. Contribute to the one that matches y
 **Branches:**
 - `main` - production-ready code
 - `dev` - integration branch (where applicable)
+- `phase` - feature branch
 
 **Work process:**
 1. Find or create a GitHub issue
 2. Fork the relevant repo
 3. Create a branch: `feature/brief-description` or `fix/brief-description`
 4. Do the work
-5. Open a PR to `main` (or `dev` if the repo has one)
+5. Open a PR to `dev` (or `phase` if the repo has one)
 6. Pass CI and review
 
 ## Code Standards
